@@ -190,6 +190,7 @@ blockquote cite{display:block;font-family:'Assistant',sans-serif;font-style:norm
   position:fixed;inset:0;z-index:200;background:rgba(20,16,12,.92);
   display:grid;place-items:center;padding:4vmin;cursor:zoom-out;
 }
+.lightbox[hidden]{display:none}
 .lightbox img{max-width:92vw;max-height:90vh;border-radius:8px}
 .lb-close{position:absolute;top:18px;inset-inline-end:26px;background:none;border:none;color:#fff;font-size:44px;cursor:pointer}
 
