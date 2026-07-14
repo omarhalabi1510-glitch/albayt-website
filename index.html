@@ -1,116 +1,286 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>צימר הבית | Al-Bayt | Ram</title>
-<meta name="description" content="צימר בצפון רמת הגולן על גדות ברכת רם, נוף מרהיב לאגם ולחרמון המושלג. אוכל מקומי משובח ובריא, ארוחות בוקר וארוחות ערב. Al-Bayt is located on the banks of Lake Ram opposite to the Hermon mount. We offer our guests warm and beautiful rooms with a beautiful view of the Ram lake and cherry trees.">
-<meta property="og:title" content="צימר הבית | Al-Bayt | Ram">
-<meta property="og:description" content="צימר בצפון רמת הגולן על גדות ברכת רם, נוף מרהיב לאגם ולחרמון המושלג. Al-Bayt Bed &amp; Breakfast — Lake Ram, Golan Heights.">
+<title>צימר הבית | Al-Bayt — צימר על שפת ברכת רם, מול החרמון</title>
+<meta name="description" content="צימר הבית (Al-Bayt) במסעדה שברמת הגולן — יחידות אירוח אותנטיות על גדות ברכת רם מול החרמון. קמין עצים, ארוחת בוקר מקומית, גינה ונוף מרהיב. דירוג 8.7 ב-Booking.">
+<meta property="og:title" content="צימר הבית | Al-Bayt — על שפת ברכת רם">
+<meta property="og:description" content="יחידות אירוח אותנטיות על גדות ברכת רם מול החרמון. ארוחת בוקר מקומית, קמין עצים ונוף שאין שני לו. דירוג 8.7 מ-90 חוות דעת.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.albayt1.com/">
-<meta property="og:image" content="https://www.albayt1.com/images/gallery-01.jpg">
+<meta property="og:image" content="https://www.albayt1.com/images/site/hero.jpg">
 <link rel="icon" type="image/png" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;1,300&family=Heebo:wght@300;400;800&family=IBM+Plex+Sans+Arabic:wght@300;400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "צימר הבית | Zimer Al-Bayt",
+  "image": "https://www.albayt1.com/images/site/hero.jpg",
+  "url": "https://www.albayt1.com/",
+  "telephone": "+972506497575",
+  "address": {"@type": "PostalAddress", "addressLocality": "מסעדה", "postalCode": "1243500", "addressCountry": "IL"},
+  "geo": {"@type": "GeoCoordinates", "latitude": 33.2345807, "longitude": 35.769341},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "8.7", "bestRating": "10", "reviewCount": "90"},
+  "priceRange": "₪₪"
+}
+</script>
 </head>
 <body>
 
-<header class="site-header">
-  <a class="logo" href="#top" aria-label="Al-Bayt — top of page">
-    <img src="images/logo.png" alt="Al-Bayt house logo" width="86" height="67">
+<header class="topbar" id="topbar">
+  <a class="brand" href="#top">
+    <img src="images/logo.png" alt="" width="44" height="34">
+    <span>צימר הבית</span>
   </a>
-  <a class="book-btn" href="tel:+972506497575">Book A Room</a>
+  <nav class="nav" aria-label="ניווט ראשי">
+    <a href="#rooms">היחידות</a>
+    <a href="#breakfast">ארוחת בוקר</a>
+    <a href="#area">הסביבה</a>
+    <a href="#gallery">גלריה</a>
+    <a href="#reviews">חוות דעת</a>
+    <a href="#contact">הגעה ויצירת קשר</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="lang" href="en/" lang="en">EN</a>
+    <a class="btn btn-wa small" href="https://wa.me/972506497575?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%91%D7%A6%D7%99%D7%9E%D7%A8%20%D7%94%D7%91%D7%99%D7%AA" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.84 9.84 0 0 1 9.89 9.89c0 5.45-4.44 9.88-9.9 9.88m8.42-18.3A11.82 11.82 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.16 1.6 5.97L0 24l6.24-1.64a11.93 11.93 0 0 0 5.8 1.48h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.44"/></svg>
+      וואטסאפ
+    </a>
+  </div>
 </header>
-
-<aside class="side-actions">
-  <a class="pill" href="tel:+972506497575">Call us: +972506497575</a>
-  <a class="phone-icon" href="tel:+972506497575" aria-label="Call Al-Bayt">
-    <img src="images/icon-phone.svg" alt="" width="46" height="46">
-  </a>
-  <a class="fb-icon" href="https://www.facebook.com/albayt12" target="_blank" rel="noopener" aria-label="Al-Bayt on Facebook">
-    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07c0 5.02 3.66 9.19 8.44 9.93v-7.03H7.9v-2.9h2.54V9.86c0-2.52 1.5-3.92 3.79-3.92 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.9h-2.33V22c4.78-.74 8.44-4.91 8.44-9.93z"/></svg>
-  </a>
-  <a class="pill" href="mailto:omar.halaby@hotmail.com?subject=e-mail">E-mail</a>
-</aside>
 
 <main id="top">
 
-  <section class="hero" aria-label="Al-Bayt">
-    <h1 class="hero-title">Al-Bayt</h1>
-    <p class="hero-sub">&mdash;&ensp;<em>Bed &amp; Breakfast</em>&ensp;&mdash;</p>
-  </section>
-
-  <section class="gallery" id="gallery" aria-label="Gallery">
-    <div class="masonry">
-      <img src="images/gallery-01.jpg" alt="View of Lake Ram with cherry blossoms" loading="lazy">
-      <img src="images/gallery-02.jpg" alt="Snowy stairs and wooden deck at Al-Bayt" loading="lazy">
-      <img src="images/gallery-03.jpg" alt="Snow at Al-Bayt" loading="lazy">
-      <img src="images/gallery-04.jpg" alt="Cherry trees in blossom in the garden" loading="lazy">
-      <img src="images/gallery-05.jpg" alt="Christmas tree at the entrance" loading="lazy">
-      <img src="images/gallery-06.jpg" alt="Stone facade with blossoming trees" loading="lazy">
-      <img src="images/gallery-07.jpg" alt="Local breakfast served in the garden" loading="lazy">
-      <img src="images/gallery-08.jpg" alt="Garden path between the trees" loading="lazy">
-      <img src="images/gallery-09.jpg" alt="Decorated tiled patio" loading="lazy">
-      <img src="images/gallery-10.jpg" alt="Walkway with lake view" loading="lazy">
-      <img src="images/gallery-11.jpg" alt="View toward Lake Ram" loading="lazy">
-      <img src="images/gallery-12.jpg" alt="Al-Bayt guesthouse" loading="lazy">
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <h4 class="section-title">ABOUT</h4>
-    <div class="about-cols">
-      <div class="about-col he" dir="rtl" lang="he">
-        <h2 class="outline-title he-title">צימר הבית</h2>
-        <p>צימר הבית ממוקם על גדות ברכת רם מול החרמון המושלג.<br>
-        אנחנו מציעים לאורחנו חדרים אותנטיים עם נוף מרהיב לברכת רם ולעצי הדובדבן.<br>
-        אנחנו מציעים לאורחינו אוכל בריא ומקומי.</p>
+  <!-- ============ HERO ============ -->
+  <section class="hero" data-slot="hero">
+    <img class="hero-img" src="images/site/hero.jpg" alt="ברכת רם מול החרמון — הנוף מצימר הבית" fetchpriority="high">
+    <div class="hero-veil"></div>
+    <div class="hero-inner">
+      <p class="hero-kicker">מסעדה · רמת הגולן</p>
+      <h1>צימר הבית <span class="latin">Al-Bayt</span></h1>
+      <p class="hero-sub">על שפת ברכת רם, מול החרמון — אירוח כפרי אותנטי, ארוחת בוקר מקומית ושקט שאין כמוהו</p>
+      <div class="hero-ctas">
+        <a class="btn btn-wa" href="https://wa.me/972506497575?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%91%D7%A6%D7%99%D7%9E%D7%A8%20%D7%94%D7%91%D7%99%D7%AA" target="_blank" rel="noopener">בדיקת זמינות בוואטסאפ</a>
+        <a class="btn btn-ghost" href="https://www.booking.com/hotel/il/hbyt-mas-39-ada.he.html" target="_blank" rel="noopener">הזמנה ב-Booking.com</a>
       </div>
-      <div class="about-col en" lang="en">
-        <p>Al-Bayt is located on the banks of Lake Ram opposite to the Hermon mount.<br>
-        We offer our guests warm and beautiful rooms with a beautiful view of the Ram lake and cherry trees.<br>
-        We also serve healthy local meals.</p>
-      </div>
-      <div class="about-col ar" dir="rtl" lang="ar">
-        <h2 class="outline-title ar-title">ألبيت</h2>
-        <p>يقع ألبيت على ضفاف بحيرة رام مقابل جبل الشيخ المثلج.<br>
-        نحن نقدّم لنزلائنا غرف دافئة ومميّزة مع منظر طبيعيّ خلّاب نحو بحيرة رام ونحو أشجار الكرز.<br>
-        نقدّم أيضًا وجبات طعام شعبيّة وصحيّة.</p>
+      <div class="trust">
+        <span class="score">8.7</span>
+        <span class="trust-text">״נהדר״ · 90 חוות דעת ב-Booking</span>
+        <span class="dot">·</span><span>מיקום 9.5</span>
+        <span class="dot">·</span><span>צוות 9.8</span>
+        <span class="dot">·</span><span>זוגות 9.9</span>
       </div>
     </div>
   </section>
 
-  <section class="services" id="services">
-    <h4 class="section-title">OUR SERVICES</h4>
-    <div class="services-cols">
-      <div class="service">
-        <img src="images/icon-breakfast.svg" alt="" width="120" height="93" loading="lazy">
-        <h6>Breakfast</h6>
+  <!-- ============ INTRO ============ -->
+  <section class="intro">
+    <div class="wrap intro-grid">
+      <div class="intro-text">
+        <h2>ברוכים הבאים הביתה</h2>
+        <p>על גדות ברכת רם, בכפר מסעדה שבצפון רמת הגולן, מחכה לכם בית אבן חם עם גינה פורחת, עצי דובדבן ונוף פתוח אל החרמון. עומר וסולימאן מארחים אתכם כמו בני משפחה — עם קפה על המרפסת, קמין עצים בחורף וארוחת בוקר מהמטבח המקומי.</p>
       </div>
-      <div class="service">
-        <img src="images/icon-garden.svg" alt="" width="120" height="40" loading="lazy">
-        <h6>Garden</h6>
+      <ul class="intro-facts">
+        <li><strong>15 דק׳</strong> מאתר החרמון</li>
+        <li><strong>ארוחת בוקר</strong> מקומית וטרייה</li>
+        <li><strong>חניה פרטית</strong> חינם + Wi-Fi</li>
+        <li><strong>קמין עצים</strong> בכל יחידה</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ROOMS ============ -->
+  <section class="rooms" id="rooms">
+    <div class="wrap">
+      <h2 class="section-h">היחידות שלנו</h2>
+      <p class="section-sub">כל יחידה עם כניסה פרטית, טרסה, מטבחון מאובזר, קמין עצים, טלוויזיה וחדר רחצה פרטי</p>
+
+      <div class="room-grid">
+
+        <article class="room" data-slot="room-1">
+          <img src="images/site/room1.jpg" alt="חדר זוגי — צימר הבית" loading="lazy">
+          <div class="room-body">
+            <h3>חדר זוגי</h3>
+            <p class="cap">עד 5 אורחים · מיטה זוגית + מיטות נוספות</p>
+            <ul class="amen"><li>קמין עצים</li><li>מטבחון</li><li>טרסה</li><li>מקלחת פרטית</li></ul>
+            <div class="room-ctas">
+              <a class="btn btn-wa small" href="https://wa.me/972506497575?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%9C%D7%97%D7%93%D7%A8%20%D7%94%D7%96%D7%95%D7%92%D7%99" target="_blank" rel="noopener">בדיקת זמינות</a>
+              <a class="link-book" href="https://www.booking.com/hotel/il/hbyt-mas-39-ada.he.html" target="_blank" rel="noopener">Booking ←</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room" data-slot="room-2">
+          <img src="images/site/room2.jpg" alt="סוויטה עם נוף לבריכה — צימר הבית" loading="lazy">
+          <div class="room-body">
+            <h3>סוויטה עם נוף לבריכה</h3>
+            <p class="cap">עד 5 אורחים · מיטה זוגית + 2 יחידות + ספה</p>
+            <ul class="amen"><li>נוף לברכת רם</li><li>קמין עצים</li><li>מטבחון</li><li>מרפסת</li></ul>
+            <div class="room-ctas">
+              <a class="btn btn-wa small" href="https://wa.me/972506497575?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%9C%D7%A1%D7%95%D7%95%D7%99%D7%98%D7%94%20%D7%A2%D7%9D%20%D7%A0%D7%95%D7%A3%20%D7%9C%D7%91%D7%A8%D7%99%D7%9B%D7%94" target="_blank" rel="noopener">בדיקת זמינות</a>
+              <a class="link-book" href="https://www.booking.com/hotel/il/hbyt-mas-39-ada.he.html" target="_blank" rel="noopener">Booking ←</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room" data-slot="room-3">
+          <img src="images/site/room3.jpg" alt="סוויטת משפחה — צימר הבית" loading="lazy">
+          <div class="room-body">
+            <h3>סוויטת משפחה</h3>
+            <p class="cap">עד 5 אורחים · מתאימה למשפחות</p>
+            <ul class="amen"><li>מרווחת</li><li>קמין עצים</li><li>מטבחון</li><li>פינת ישיבה</li></ul>
+            <div class="room-ctas">
+              <a class="btn btn-wa small" href="https://wa.me/972506497575?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%9C%D7%A1%D7%95%D7%95%D7%99%D7%98%D7%AA%20%D7%94%D7%9E%D7%A9%D7%A4%D7%97%D7%94" target="_blank" rel="noopener">בדיקת זמינות</a>
+              <a class="link-book" href="https://www.booking.com/hotel/il/hbyt-mas-39-ada.he.html" target="_blank" rel="noopener">Booking ←</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room" data-slot="room-4">
+          <img src="images/site/room4.jpg" alt="סוויטה — צימר הבית" loading="lazy">
+          <div class="room-body">
+            <h3>סוויטה</h3>
+            <p class="cap">עד 4 אורחים · מיטה זוגית גדולה + ספה</p>
+            <ul class="amen"><li>אינטימית</li><li>קמין עצים</li><li>מטבחון</li><li>טרסה</li></ul>
+            <div class="room-ctas">
+              <a class="btn btn-wa small" href="https://wa.me/972506497575?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%9C%D7%A1%D7%95%D7%95%D7%99%D7%98%D7%94" target="_blank" rel="noopener">בדיקת זמינות</a>
+              <a class="link-book" href="https://www.booking.com/hotel/il/hbyt-mas-39-ada.he.html" target="_blank" rel="noopener">Booking ←</a>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <div class="service">
-        <img src="images/icon-lake.svg" alt="" width="110" height="108" loading="lazy">
-        <h6>Lake view</h6>
+      <p class="price-note">המחיר משתנה לפי תאריכים ותפוסה — שלחו וואטסאפ ונחזור אליכם מיד עם הצעה.</p>
+    </div>
+  </section>
+
+  <!-- ============ BREAKFAST ============ -->
+  <section class="split" id="breakfast">
+    <img src="images/site/breakfast.jpg" alt="ארוחת בוקר בצימר הבית" loading="lazy" data-slot="breakfast">
+    <div class="split-body">
+      <h2 class="section-h">ארוחת בוקר מהמטבח שלנו</h2>
+      <p>ארוחת בוקר קונטיננטלית עם טעמים מקומיים של הגולן — גבינות, ירקות טריים, לחם, זיתים ושמן זית, מטבלים ביתיים וקפה על הנוף.</p>
+      <blockquote>״ארוחת בוקר הכי טעימה שאכלנו בשנים האחרונות — הטעמים פשוט נפלאים.״<cite>— חן, ישראל</cite></blockquote>
+    </div>
+  </section>
+
+  <!-- ============ HOSTS ============ -->
+  <section class="split reverse" id="hosts">
+    <img src="images/site/hosts.jpg" alt="הגינה בצימר הבית" loading="lazy" data-slot="hosts">
+    <div class="split-body">
+      <h2 class="section-h">המארחים שלכם — עומר וסולימאן</h2>
+      <p>אב ובנו, ילידי המקום, שיודעים בדיוק מתי להדליק לכם את הקמין לפני שתגיעו, איפה השביל הכי יפה סביב הברכה ומה שווה לטעום באזור. אצלנו לא מתארחים — מרגישים בבית.</p>
+      <blockquote>״עומאר ואביו סולימאן מארחים למופת — חוויה אמיתית ואותנטית.״<cite>— זיו, ישראל</cite></blockquote>
+    </div>
+  </section>
+
+  <!-- ============ AREA ============ -->
+  <section class="area" id="area">
+    <div class="wrap">
+      <h2 class="section-h">מה סביבנו</h2>
+      <div class="area-grid">
+        <div class="area-card"><strong>ברכת רם</strong><span>ממש מעבר לגדר — הליכה סביב האגם לאור שקיעה</span></div>
+        <div class="area-card"><strong>אתר החרמון</strong><span>כ-15 דקות נסיעה — שלג בחורף, רכבל בקיץ</span></div>
+        <div class="area-card"><strong>מפל הבניאס</strong><span>כ-11 ק״מ — מהמסלולים היפים בצפון</span></div>
+        <div class="area-card"><strong>מבצר נמרוד</strong><span>כ-8 ק״מ — נוף ומורשת</span></div>
+        <div class="area-card"><strong>עונות הפרי</strong><span>פריחת הדובדבן באביב, קטיף בקיץ</span></div>
+        <div class="area-card"><strong>מסעדות הכפר</strong><span>אוכל דרוזי אותנטי במרחק דקות</span></div>
       </div>
     </div>
   </section>
 
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <h2 class="section-h">רגעים מהבית</h2>
+      <div class="g-grid" id="ggrid" data-slot="gallery">
+        <img src="images/site/g01.jpg" alt="" loading="lazy">
+        <img src="images/site/g02.jpg" alt="" loading="lazy">
+        <img src="images/site/g03.jpg" alt="" loading="lazy">
+        <img src="images/site/g04.jpg" alt="" loading="lazy">
+        <img src="images/site/g05.jpg" alt="" loading="lazy">
+        <img src="images/site/g06.jpg" alt="" loading="lazy">
+        <img src="images/site/g07.jpg" alt="" loading="lazy">
+        <img src="images/site/g08.jpg" alt="" loading="lazy">
+        <img src="images/site/g09.jpg" alt="" loading="lazy">
+        <img src="images/site/g10.jpg" alt="" loading="lazy">
+        <img src="images/site/g11.jpg" alt="" loading="lazy">
+        <img src="images/site/g12.jpg" alt="" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="rev-head">
+        <h2 class="section-h">מה אומרים האורחים</h2>
+        <a class="rev-badge" href="https://www.booking.com/hotel/il/hbyt-mas-39-ada.he.html" target="_blank" rel="noopener"><span class="score">8.7</span> נהדר · 90 חוות דעת ב-Booking</a>
+      </div>
+      <div class="rev-grid">
+        <figure><blockquote>צימר מדהים על גדות ברכת רם, נוף מרהיב ושקט מסביב. סולימאן אירח אותנו באופן מקסים, לבבי ומזמין.</blockquote><figcaption>Tamir</figcaption></figure>
+        <figure><blockquote>החדר מרווח, מחומם בקמין עצים. ארוחת הבוקר עשירה ומכל טוב — והכל במחיר שפוי. אין ספק שנחזור.</blockquote><figcaption>Henni</figcaption></figure>
+        <figure><blockquote>המקום מקסים, כמו גן עדן קטן על ברכת רם. בעל הבית אדיב ונדיב — נהנינו מאוד!</blockquote><figcaption>Rami</figcaption></figure>
+        <figure><blockquote>מקום מדהים לאירוח זוגי או משפחתי. המארח דואג תמיד שלא יחסר כלום. תענוג.</blockquote><figcaption>Sefidori</figcaption></figure>
+        <figure><blockquote>אירוח מכל הלב, אווירה קסומה על שפת האגם, מוקפים בצמחייה.</blockquote><figcaption>Hadar</figcaption></figure>
+        <figure><blockquote>צוות נפלא! עומר ואבא שלו דאגו לכל דבר. ארוחת בוקר הכי טעימה שאכלנו בשנים האחרונות.</blockquote><figcaption>חן</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
   <section class="contact" id="contact">
-    <h4 class="section-title">CONTACT US</h4>
-    <p class="contact-line">Tel: <a href="tel:+972506497575">+972506497575</a></p>
-    <p class="contact-line">Masaa'da - Golan Heights / Ram Lake</p>
-    <p class="copyright">&copy; 2019 by Al-Bayt.</p>
-    <p class="seo-line" dir="rtl" lang="he">צימר הבית מסעדה ברכת רם</p>
-    <p class="seo-line" dir="rtl" lang="he">צימר הבית עומר חלבי</p>
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <h2 class="section-h">הגעה ויצירת קשר</h2>
+        <p class="addr">מסעדה, רמת הגולן · על שפת ברכת רם</p>
+        <ul class="c-list">
+          <li><a href="https://wa.me/972506497575" target="_blank" rel="noopener">וואטסאפ: 050-649-7575</a></li>
+          <li><a href="tel:+972506497575">טלפון: 050-649-7575</a></li>
+          <li><a href="mailto:omar.halaby@hotmail.com">omar.halaby@hotmail.com</a></li>
+          <li><a href="https://www.facebook.com/albayt12" target="_blank" rel="noopener">פייסבוק</a></li>
+          <li><a href="https://maps.app.goo.gl/spvqYzDHqFwNbVgZ8" target="_blank" rel="noopener">ניווט בגוגל מפות ←</a></li>
+        </ul>
+        <div class="policies">
+          <p><strong>צ׳ק-אין:</strong> 13:30–00:00 (בתיאום מראש) · <strong>צ׳ק-אאוט:</strong> עד 10:30</p>
+          <p>ילדים בכל גיל מתקבלים בשמחה · מיטת תינוק חינם לפי בקשה · לא ניתן להכניס חיות מחמד</p>
+        </div>
+      </div>
+      <div class="map-box">
+        <iframe title="מפה — צימר הבית" src="https://maps.google.com/maps?q=33.2345807,35.769341&z=14&output=embed&hl=he" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
   </section>
+
+  <footer class="footer">
+    <p>© 2026 צימר הבית | Al-Bayt · מסעדה, רמת הגולן</p>
+    <p class="foot-links"><a href="en/" lang="en">English</a> · <a href="https://www.booking.com/hotel/il/hbyt-mas-39-ada.he.html" target="_blank" rel="noopener">Booking.com</a></p>
+  </footer>
 
 </main>
+
+<a class="wa-float" href="https://wa.me/972506497575?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%91%D7%A6%D7%99%D7%9E%D7%A8%20%D7%94%D7%91%D7%99%D7%AA" target="_blank" rel="noopener" aria-label="שלחו לנו וואטסאפ">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.84 9.84 0 0 1 9.89 9.89c0 5.45-4.44 9.88-9.9 9.88m8.42-18.3A11.82 11.82 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.16 1.6 5.97L0 24l6.24-1.64a11.93 11.93 0 0 0 5.8 1.48h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.44"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox" hidden><button class="lb-close" aria-label="סגירה">×</button><img alt=""></div>
+
+<script>
+// sticky topbar
+const tb = document.getElementById('topbar');
+addEventListener('scroll', () => tb.classList.toggle('solid', scrollY > 40), {passive: true});
+// lightbox
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+document.getElementById('ggrid').addEventListener('click', e => {
+  if (e.target.tagName === 'IMG') { lbImg.src = e.target.src; lb.hidden = false; document.body.style.overflow = 'hidden'; }
+});
+lb.addEventListener('click', () => { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; });
+</script>
 
 </body>
 </html>
