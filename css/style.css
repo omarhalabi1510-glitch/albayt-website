@@ -146,7 +146,6 @@ blockquote cite{display:block;font-family:'Assistant',sans-serif;font-style:norm
   cursor:zoom-in;transition:transform .2s,box-shadow .2s;
 }
 .g-grid img:hover{transform:scale(1.02);box-shadow:var(--shadow)}
-.g-grid img:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
 
 /* ---------- reviews ---------- */
 .reviews{padding:90px 0}
