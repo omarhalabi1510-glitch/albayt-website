@@ -1,0 +1,263 @@
+/* Al-Bayt — Bed & Breakfast — albayt1.com
+   Replica of the original Wix site, rebuilt as fast static HTML/CSS. */
+
+:root {
+  --brand: #805752;        /* engraved title brown */
+  --icon-brown: #3D3129;   /* phone icon / logo brown */
+  --ink: #242323;          /* near-black text */
+  --muted: #737373;        /* body gray */
+  --btn-taupe: #8d817a;    /* Book A Room background */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #fff;
+  color: var(--ink);
+  font-family: 'Montserrat', 'Heebo', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 300;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- header ---------- */
+
+.site-header {
+  position: relative;
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 24px 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo { display: inline-block; text-align: center; }
+.logo img { width: 68px; height: auto; margin: 0 auto; }
+.logo-text {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-size: 19px;
+  color: #7a5a50;
+  margin-top: 2px;
+}
+
+.book-btn {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #fff;
+  background: var(--btn-taupe);
+  padding: 18px 44px;
+  display: inline-block;
+  transition: opacity .2s;
+}
+.book-btn:hover { opacity: .85; }
+
+/* ---------- floating side actions ---------- */
+
+.side-actions {
+  position: fixed;
+  right: 34px;
+  top: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 44px;
+  z-index: 50;
+}
+
+.pill {
+  font-size: 15px;
+  font-weight: 400;
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  border-radius: 22px;
+  padding: 10px 22px;
+  white-space: nowrap;
+}
+.pill:hover { background: #f5f2f0; }
+
+.phone-icon img { width: 46px; height: 46px; }
+
+.fb-icon { color: #000; margin-right: 6px; }
+.fb-icon:hover { color: #3D3129; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.hero-title {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(56px, 9vw, 87px);
+  letter-spacing: .28em;
+  text-transform: none;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--brand);
+  text-stroke: 1.6px var(--brand);
+}
+
+.hero-sub {
+  margin-top: 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--ink);
+}
+.hero-sub em { font-style: italic; }
+
+/* ---------- gallery ---------- */
+
+.gallery {
+  max-width: 1050px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+.masonry {
+  column-count: 3;
+  column-gap: 16px;
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 16px;
+  break-inside: avoid;
+}
+
+/* ---------- sections ---------- */
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: .12em;
+  text-align: center;
+  color: var(--ink);
+  margin: 120px 0 60px;
+}
+
+/* about */
+
+.about-cols {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-col p {
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.about-col.he p { font-family: 'Heebo', sans-serif; text-align: right; }
+.about-col.en p { font-family: 'Montserrat', sans-serif; text-align: center; }
+.about-col.ar p { font-family: 'IBM Plex Sans Arabic', sans-serif; text-align: right; }
+
+.outline-title {
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1.3px var(--ink);
+  text-stroke: 1.3px var(--ink);
+  margin-bottom: 28px;
+}
+
+.he-title {
+  font-family: 'Heebo', sans-serif;
+  font-size: 44px;
+  text-align: center;
+}
+
+.ar-title {
+  font-family: 'Aref Ruqaa', serif;
+  font-weight: 700;
+  font-size: 46px;
+  text-align: center;
+}
+
+.about-col.en { padding-top: 90px; }
+
+/* services */
+
+.services-cols {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  text-align: center;
+}
+
+.service img { margin: 0 auto 26px; height: 100px; width: auto; object-fit: contain; }
+
+.service h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: .18em;
+  text-transform: none;
+  color: var(--ink);
+}
+
+/* contact */
+
+.contact { text-align: center; padding-bottom: 90px; }
+
+.contact-line {
+  font-size: 19px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.copyright {
+  margin-top: 34px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.seo-line {
+  font-family: 'Heebo', sans-serif;
+  font-size: 13px;
+  color: #b5b0ac;
+  line-height: 1.8;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .side-actions {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 26px 16px 0;
+    flex-wrap: wrap;
+  }
+  .about-cols, .services-cols { grid-template-columns: 1fr; }
+  .about-col.en { padding-top: 0; }
+  .about-col.en p { text-align: center; }
+  .masonry { column-count: 2; }
+  .section-title { margin: 80px 0 40px; }
+}
+
+@media (max-width: 560px) {
+  .site-header { padding: 16px 20px 0; }
+  .book-btn { font-size: 17px; padding: 13px 26px; }
+  .masonry { column-count: 1; }
+  .hero { padding-top: 40px; }
+}
