@@ -1,0 +1,145 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "brand": "Al-Bayt",
+  "title": "Al-Bayt Guesthouse | A family welcome on Lake Ram",
+  "description": "A family-run guesthouse by Lake Ram in Mas’ade. Explore our rooms, shared lounge and garden, and contact Omar and Suleiman to plan your stay.",
+  "nav": [
+    "Rooms",
+    "Shared spaces",
+    "Breakfast",
+    "Gallery",
+    "Guest rating",
+    "Plan your stay"
+  ],
+  "menu": "Menu",
+  "skip": "Skip to content",
+  "other": "עברית",
+  "otherPath": "/",
+  "kicker": "MAS’ADE · LAKE RAM",
+  "heading": "A little closer to the lake.",
+  "sub": "Stone, wood and a garden by the water. A family welcome from Omar and Suleiman.",
+  "availability": "Ask about your stay",
+  "explore": "Explore the rooms",
+  "booking": "View on Booking.com",
+  "bookingPhotos": "Room photos & details on Booking",
+  "ratingTitle": "A welcome guests remember",
+  "ratingLead": "See the dated guest score and read the latest reviews directly on Booking.com.",
+  "ratingCurrent": "See the current rating on Booking.com",
+  "ratingBased": "{count} reviews on Booking.com",
+  "ratingChecked": "Checked {date}",
+  "ratingOut": "out of 10",
+  "introTitle": "Welcome to our family’s guesthouse",
+  "intro": "On the banks of Lake Ram, Al-Bayt brings together stone and wood interiors, garden paths and places to sit outside. Omar and his father Suleiman welcome couples and families to Mas’ade.",
+  "facts": [
+    "By Lake Ram",
+    "Free private parking",
+    "Shared kitchen & lounge",
+    "Family accommodation"
+  ],
+  "roomsTitle": "Find your place at Al-Bayt",
+  "roomsIntro": "Four accommodation types, with different layouts. Compare the sleeping arrangements below, then ask us which unit suits your stay.",
+  "roomNames": [
+    "Double Room",
+    "Suite for up to 5",
+    "Family Suite",
+    "Suite for up to 4"
+  ],
+  "guests": "Up to {n} guests",
+  "bedNames": {
+    "single": [
+      "single bed",
+      "single beds"
+    ],
+    "double": [
+      "double bed",
+      "double beds"
+    ],
+    "largeDouble": [
+      "large double bed",
+      "large double beds"
+    ],
+    "sofa": [
+      "sofa bed",
+      "sofa beds"
+    ]
+  },
+  "roomNote": "Photos and full facilities for each accommodation type are available through its Booking link. Contact us to confirm the exact unit before booking.",
+  "rates": "Rates and availability depend on your dates and group size. Send us your dates, number of guests and children’s ages for a quote.",
+  "roomMessage": "Hello, I would like to ask about {room} (reference {id}). Dates: … Guests: … Children’s ages: …",
+  "message": "Hello, I would like to plan a stay at Al-Bayt. Dates: … Guests: … Children’s ages: …",
+  "sharedTitle": "A shared room to gather in",
+  "sharedText": "Our stone lounge is a shared space for guests, alongside a communal cooking area. It is separate from the private accommodation units.",
+  "sharedCaption": "The shared lobby at Al-Bayt",
+  "noPool": "The water beside us is Lake Ram. There is no swimming pool at the property.",
+  "breakfastTitle": "Breakfast, with a local touch",
+  "breakfastText": "Continental breakfast is available. Ask us about the current menu, timing and price, and whether it is included in your chosen rate.",
+  "breakfastAlt": "A breakfast table with salads, bread and small dishes in the garden",
+  "galleryTitle": "Around the house",
+  "galleryIntro": "The garden, lake and shared spaces through the seasons. Interior photographs show the character of the property; layouts vary by unit.",
+  "openPhoto": "Enlarge photo",
+  "close": "Close photo",
+  "previous": "Previous photo",
+  "next": "Next photo",
+  "photoOf": "Photo {n} of {total}",
+  "gallery": [
+    [
+      "lake-terrace",
+      "A seating terrace overlooking Lake Ram"
+    ],
+    [
+      "lake-daylight",
+      "Lake Ram framed by trees"
+    ],
+    [
+      "garden-path",
+      "A shaded garden path at Al-Bayt"
+    ],
+    [
+      "stone-exterior",
+      "The stone building among spring blossoms"
+    ],
+    [
+      "winter-garden",
+      "The garden and terrace in winter snow"
+    ],
+    [
+      "shared-lobby",
+      "Shared stone lobby with seating and a fireplace"
+    ],
+    [
+      "stone-room-interior",
+      "Stone room interior; room layouts vary"
+    ],
+    [
+      "wood-room-interior",
+      "Wood interior with red seating; room layouts vary"
+    ],
+    [
+      "wood-bedroom",
+      "Bedroom with wood walls; room layouts vary"
+    ]
+  ],
+  "areaTitle": "Make time for the surroundings",
+  "areaText": "Enjoy Lake Ram and the landscape around Mas’ade. For trips towards Mount Hermon, Banias or Nimrod Fortress, ask us for suggestions and check current opening and access arrangements.",
+  "planTitle": "Before you arrive",
+  "checkIn": "Check-in",
+  "checkOut": "Check-out",
+  "arrival": "Please arrange your arrival time with us in advance. Minimum check-in age: 18.",
+  "childrenTitle": "Children & sleeping arrangements",
+  "children": "Children of all ages are welcome. A free cot for ages 0–2 can be requested, subject to the selected unit and availability. No extra beds are listed. Guests aged 18 and over count as adults.",
+  "houseTitle": "House guidelines",
+  "house": "Pets and parties/events are not allowed. There is no swimming pool.",
+  "termsTitle": "Your booking terms",
+  "terms": "For Booking.com reservations, check the cancellation and prepayment conditions of your selected option. For direct reservations, ask us to confirm the price, inclusions and cancellation/payment terms before you book.",
+  "contactTitle": "Let’s plan your stay",
+  "address": "Mas’ade · on the banks of Lake Ram",
+  "phoneLabel": "Call us",
+  "emailLabel": "Email",
+  "mapLabel": "Directions in Google Maps",
+  "contactNote": "Send your dates and group size. We’ll help you choose the right unit.",
+  "footer": "A family guesthouse by Lake Ram",
+  "mapCaption": "Open directions",
+  "photoReview": "Photo review",
+  "heroAlt": "The garden at Al-Bayt beside Lake Ram"
+}

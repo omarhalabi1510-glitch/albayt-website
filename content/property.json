@@ -1,0 +1,77 @@
+{
+  "propertyName": "Zimer Al-Bayt",
+  "propertyId": "3291992",
+  "website": "https://www.albayt1.com",
+  "bookingUrl": "https://www.booking.com/hotel/il/hbyt-mas-39-ada.en-gb.html",
+  "phone": "+972506497575",
+  "whatsapp": "972506497575",
+  "email": "omar.halaby@hotmail.com",
+  "mapUrl": "https://maps.app.goo.gl/spvqYzDHqFwNbVgZ8",
+  "rating": {
+    "score": 8.9,
+    "reviewCount": 104,
+    "checkedAt": "2026-10-04T20:01:00Z",
+    "maxAgeDays": 60,
+    "source": "Booking.com"
+  },
+  "rooms": [
+    {
+      "id": "329199201",
+      "key": "double",
+      "capacity": 5,
+      "beds": {
+        "single": 1,
+        "double": 2
+      }
+    },
+    {
+      "id": "329199202",
+      "key": "suite2",
+      "capacity": 5,
+      "beds": {
+        "single": 2,
+        "double": 1,
+        "sofa": 1
+      }
+    },
+    {
+      "id": "329199203",
+      "key": "family",
+      "capacity": 5,
+      "beds": {
+        "single": 2,
+        "double": 1,
+        "sofa": 1
+      }
+    },
+    {
+      "id": "329199204",
+      "key": "suite",
+      "capacity": 4,
+      "beds": {
+        "single": 1,
+        "largeDouble": 1,
+        "sofa": 1
+      }
+    }
+  ],
+  "policies": {
+    "checkIn": "13:30–00:00",
+    "checkOut": "06:30–10:30",
+    "minimumCheckInAge": 18,
+    "cotAge": "0–2",
+    "pets": false,
+    "parties": false,
+    "swimmingPool": false
+  },
+  "sourceCheckedAt": "2026-10-04",
+  "ownerConfirmed": [
+    "room2.jpg is shared lobby",
+    "No swimming pools anywhere at property"
+  ],
+  "unresolved": [
+    "Mapping of interior images to individual units",
+    "Breakfast inclusion and price",
+    "Direct-booking cancellation and prepayment terms"
+  ]
+}

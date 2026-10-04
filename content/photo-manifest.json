@@ -1,0 +1,306 @@
+{
+  "baseline": "c048e72",
+  "selected": {
+    "lake-garden": "images/site/hero.jpg",
+    "shared-lobby": "images/site/room2.jpg",
+    "breakfast-table": "images/gallery-09.jpg",
+    "garden-path": "images/gallery-10.jpg",
+    "lake-terrace": "images/site/g01.jpg",
+    "lake-daylight": "images/site/g02.jpg",
+    "stone-exterior": "images/gallery-07.jpg",
+    "winter-garden": "images/gallery-02.jpg",
+    "stone-room-interior": "images/site/room1.jpg",
+    "wood-room-interior": "images/site/room3.jpg",
+    "wood-bedroom": "images/site/room4.jpg"
+  },
+  "originals": [
+    {
+      "original": "images/gallery-01.jpg",
+      "sha256": "f35178001398a93f85a0b64475c68a1e3c58d4d541c4bb8c2287a617e6a0d3c0",
+      "width": 1200,
+      "height": 1600,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-02.jpg",
+      "sha256": "4b8e7f14db6aa23f3f2e157f06ae5b11cc0d254a6187687148290acc0911ebdc",
+      "width": 900,
+      "height": 1600,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-03.jpg",
+      "sha256": "3f60b21c4cd0406bd12a059565d8d0a7d89205ab36072a6f086fa773a71d125d",
+      "width": 900,
+      "height": 1600,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-04.jpg",
+      "sha256": "636172b0e8cd6e840f683c3e80734fd944de436ccf6ef9675b0c3d33de434a0d",
+      "width": 900,
+      "height": 1600,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-05.jpg",
+      "sha256": "568fbe347aa2f7986cc855053c4395fc5c8eb1bab925da405ea121435379dd66",
+      "width": 900,
+      "height": 1600,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-06.jpg",
+      "sha256": "50573f3f9e7649ec1d9a3b63fcd0795b67339e188fea4ba6dffe202762e13407",
+      "width": 1200,
+      "height": 1600,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-07.jpg",
+      "sha256": "447d693eeb7bd1c8522540e5681893aed6eae862bf3e7d34de95846143fb6a5f",
+      "width": 1412,
+      "height": 740,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-08.jpg",
+      "sha256": "b2407fb48126d4f594e3d219546ed4b449edc23336532059d73990a026bfc27d",
+      "width": 1600,
+      "height": 1066,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-09.jpg",
+      "sha256": "627b73eba9a968577f035c53554d69e824ca0517ab39ae872740e506252858e3",
+      "width": 1600,
+      "height": 1066,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-10.jpg",
+      "sha256": "93ada30dd7902f1aa2ea3ad3bb8bb1b06fbf63ef2ccd7ebab505d9db29f52dec",
+      "width": 1280,
+      "height": 960,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-11.jpg",
+      "sha256": "227573d1fafc4bde442e2d750673466bfcdb3bd718fa22a6a1b46d452026913c",
+      "width": 1600,
+      "height": 1066,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/gallery-12.jpg",
+      "sha256": "24eddf3b2d88d65d017d1abe1838a2826de6355e7c39ca324c3f18284f91393a",
+      "width": 1600,
+      "height": 1072,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/logo.png",
+      "sha256": "aa6daff7c6ce0b22e377d0a5b3c4455fd9a4a2644851dea88fe6ab5f22437136",
+      "width": 792,
+      "height": 642,
+      "provenance": "Existing repository asset at baseline c048e72; no new third-party download; original licensing not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/breakfast.jpg",
+      "sha256": "e293a3ed6372f54b8f52c255f0536056a76c3932809df28694549757dd33d668",
+      "width": 1024,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g01.jpg",
+      "sha256": "68971daa416e87a335d2f1d4c0bda3d161c18aadf946471f4b90221369fc4ac0",
+      "width": 1024,
+      "height": 683,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g02.jpg",
+      "sha256": "1b1536fa43ea6d80a72c24c752e88348c6efd4789ab89cf307e352e335446218",
+      "width": 1024,
+      "height": 683,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g03.jpg",
+      "sha256": "7a570e9a90aa2784f753128d138fddbe2044501ec0a5197c8d37d829f993c309",
+      "width": 1024,
+      "height": 683,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g04.jpg",
+      "sha256": "e07ac6990e3cb5953a589a0573b3fb420deb3d143542945ac62fd826b0eec342",
+      "width": 512,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g05.jpg",
+      "sha256": "15cad85ad4428cfb20def8818d83e22bf6be3329668adfd05a5bdc6c399e1dfe",
+      "width": 768,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g06.jpg",
+      "sha256": "a1bdf7740c2090c934526c9d44eb9010d25e92c86164b5be36afec5f587e0acc",
+      "width": 1024,
+      "height": 683,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g07.jpg",
+      "sha256": "64f9975439a44617a6e92a184fec5eeae124aa4cc5cc7844bbd9a419df897644",
+      "width": 576,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g08.jpg",
+      "sha256": "f8168bd5ab7e64e9be34d25c79afae348a6d24d997a2f6ae01411d76c4c66eba",
+      "width": 1024,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g09.jpg",
+      "sha256": "2c34c2b347732b548ae28d8b1b9f3fbeef425569c9f3fd71581e123fe9396408",
+      "width": 576,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g10.jpg",
+      "sha256": "d54d37de161cff50c3b290475a124f77c270bcbac4541f6aa3cdb38dd2e608c5",
+      "width": 1024,
+      "height": 767,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g11.jpg",
+      "sha256": "ecb38e2f331a5a6c5b9883721cfae3f9e1138254ace762d6fa9b9089cd69659b",
+      "width": 576,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/g12.jpg",
+      "sha256": "c3258a9e3cb9b823e078d46a43124f40c1fa6f1501caffc5b8ed0351197ce7e9",
+      "width": 576,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/hero.jpg",
+      "sha256": "034554a0f87a41c60d136582409fdf05d3608ef1075ba83117159beaf5e48d2a",
+      "width": 1280,
+      "height": 853,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/hosts.jpg",
+      "sha256": "000a2c0cd8c9201f770df1cac66ec205a3591a0eef3b05608d5950b769323098",
+      "width": 1024,
+      "height": 683,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/room1.jpg",
+      "sha256": "5475b3d26be29ae480fe976ba5cfacd78ce301c987bb4b8445c1744df49f3975",
+      "width": 1170,
+      "height": 658,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/room2.jpg",
+      "sha256": "bfa5b00e8994445936ec9260b4ab7382c4530e679048f4fd5b949d6aa5953f58",
+      "width": 1024,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": "Owner explicitly identified images/site/room2.jpg as shared lobby on 2026-10-04"
+    },
+    {
+      "original": "images/site/room3.jpg",
+      "sha256": "9a43bf280dff40d12dfacfc872e027addebfacc4b5bf4b7e9aecd0875f5469ee",
+      "width": 1024,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    },
+    {
+      "original": "images/site/room4.jpg",
+      "sha256": "64e5efa08826a1ddbbc2653861ddca95f8951d9e513a6154b8c25ed147dfb780",
+      "width": 1024,
+      "height": 768,
+      "provenance": "Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established",
+      "roomAssignment": "Unverified unless stated below",
+      "confirmation": null
+    }
+  ]
+}
