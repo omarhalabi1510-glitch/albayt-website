@@ -63,15 +63,5 @@
     "pets": false,
     "parties": false,
     "swimmingPool": false
-  },
-  "sourceCheckedAt": "2026-10-04",
-  "ownerConfirmed": [
-    "room2.jpg is shared lobby",
-    "No swimming pools anywhere at property"
-  ],
-  "unresolved": [
-    "Mapping of interior images to individual units",
-    "Breakfast inclusion and price",
-    "Direct-booking cancellation and prepayment terms"
-  ]
+  }
 }

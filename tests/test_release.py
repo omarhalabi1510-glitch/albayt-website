@@ -1,0 +1,85 @@
+import importlib.util
+import json
+import re
+import shutil
+import subprocess
+import tempfile
+import unittest
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urlsplit
+
+ROOT = Path(__file__).resolve().parents[1]
+spec = importlib.util.spec_from_file_location('build_release', ROOT/'scripts/build_release.py')
+release = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(release)
+
+class References(HTMLParser):
+    def __init__(self, text):
+        super().__init__(); self.paths=[]; self.feed(text)
+    def handle_starttag(self, tag, attrs):
+        a=dict(attrs)
+        self.paths.extend(a[k] for k in ('src', 'href') if k in a)
+        self.paths.extend(x.strip().split()[0] for x in a.get('srcset','').split(',') if x.strip())
+
+class ReleaseTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        subprocess.run(['python3',str(ROOT/'scripts/build_release.py')], check=True, capture_output=True)
+        cls.output=ROOT/'dist'
+
+    def test_only_explicit_public_files_are_packaged(self):
+        actual={str(p.relative_to(self.output)) for p in self.output.rglob('*') if p.is_file()}
+        self.assertEqual(actual,set(release.release_files()))
+        for forbidden in ['README.md','docs/REVIEW.md','content/property.json','content/photo-manifest.json','content/he.json','content/en.json','scripts/build.py','tests/test_site.py','.git/config','review/photo-contact-sheet.jpg']:
+            self.assertFalse((self.output/forbidden).exists(),forbidden)
+
+    def test_all_page_and_module_dependencies_are_in_release(self):
+        for name in ['index.html','en/index.html','404.html']:
+            for ref in References((self.output/name).read_text()).paths:
+                url=urlsplit(ref)
+                if url.scheme or url.netloc or not url.path:continue
+                target=self.output/url.path.lstrip('/') if url.path.startswith('/') else (self.output/name).parent/url.path
+                if target.is_dir():target=target/'index.html'
+                self.assertTrue(target.is_file(),ref)
+        self.assertTrue((self.output/'js/rating.js').is_file())
+        self.assertNotRegex((self.output/'js/main.js').read_text(),r'fetch\s*\(')
+
+    def test_only_consumed_rating_fields_are_inlined(self):
+        for name in ['index.html','en/index.html']:
+            text=(self.output/name).read_text()
+            data=json.loads(re.search(r'<script id="rating-data" type="application/json">(.*?)</script>',text).group(1))
+            self.assertEqual(set(data),{'score','reviewCount','checkedAt','maxAgeDays','sourceUrl','locale','labels'})
+            self.assertEqual(set(data['labels']),{'ratingBased','ratingChecked','ratingOut','ratingCurrent'})
+            self.assertEqual((data['score'],data['reviewCount']),(8.9,104))
+
+    def test_page_behavior_and_content_match_published_baseline(self):
+        for name in ['index.html','en/index.html']:
+            old=subprocess.check_output(['git','show',f'f70b9f9:{name}'],cwd=ROOT,text=True)
+            # The only HTML difference is removing an unused rating metadata key.
+            old=old.replace(', "source": "Booking.com"','')
+            self.assertEqual(old,(self.output/name).read_text())
+
+    def test_rebuild_preserves_but_does_not_republish_old_output(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary)
+            for name in release.release_files()+['content/photo-manifest.json']:
+                target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,target)
+            old=root/'dist/docs';old.mkdir(parents=True)
+            (old/'internal.txt').write_text('private sentinel')
+            release.package_release(root)
+            self.assertFalse((root/'dist/docs/internal.txt').exists())
+            copies=list((root/'.release-backups').glob('*/docs/internal.txt'))
+            self.assertEqual(len(copies),1)
+            self.assertEqual(copies[0].read_text(),'private sentinel')
+
+    def test_symlinked_output_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary)
+            for name in release.release_files()+['content/photo-manifest.json']:
+                target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,target)
+            (root/'dist').symlink_to(root/'content',target_is_directory=True)
+            with self.assertRaises(ValueError):release.package_release(root)
+            self.assertTrue((root/'content/photo-manifest.json').exists())
+
+if __name__=='__main__':unittest.main()

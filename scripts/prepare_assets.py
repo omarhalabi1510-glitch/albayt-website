@@ -16,7 +16,7 @@ manifest=[]
 for p in sorted((ROOT/'images').rglob('*')):
  if p.suffix.lower() not in ('.jpg','.jpeg','.png') or 'optimized' in p.parts: continue
  im=Image.open(p); rel=str(p.relative_to(ROOT))
- manifest.append({'original':rel,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'width':im.width,'height':im.height,'provenance':('Historical Booking CDN download recorded in baseline workflow; reuse permission not independently established' if rel.startswith('images/site/') else 'Existing repository asset at baseline c048e72; original licensing not independently established'),'roomAssignment':'Unverified unless stated below','confirmation':'Owner explicitly identified images/site/room2.jpg as shared lobby on 2026-10-04' if rel=='images/site/room2.jpg' else None})
+ manifest.append({'original':rel,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'width':im.width,'height':im.height})
 for key,src in selected.items():
  im=ImageOps.exif_transpose(Image.open(ROOT/src)).convert('RGB')
  for width in (480,960,1280):

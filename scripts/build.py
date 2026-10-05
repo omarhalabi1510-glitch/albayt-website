@@ -29,7 +29,7 @@ def build(lang):
   rooms.append(f'''<article class="room" data-room-id="{room['id']}"><div class="room-body"><span class="room-number" aria-hidden="true">0{n+1}</span><h3>{esc(name)}</h3><p class="capacity">{esc(t['guests'].format(n=room['capacity']))}</p><p class="bed-list">{esc(beds)}</p><div class="room-ctas"><a class="btn btn-wa small" href="{esc(wa(message))}" {external}>{h('availability')}</a><a class="link-book" href="{booking}#RD{room['id']}" {external}>{h('bookingPhotos')} ↗</a></div></div></article>''')
  gallery=''.join(f'''<figure><a class="gallery-link" href="/images/optimized/{key}-1280.webp" data-gallery="{i}" aria-label="{h('openPhoto')}: {esc(alt)}">{image(key,alt)}</a><figcaption>{esc(alt)}</figcaption></figure>''' for i,(key,alt) in enumerate(t['gallery']))
  schema={'@context':'https://schema.org','@type':'LodgingBusiness','name':facts['propertyName'],'url':facts['website'],'image':facts['website']+'/images/optimized/lake-garden-1280.webp','telephone':facts['phone'],'address':{'@type':'PostalAddress','addressLocality':'Mas’ade','postalCode':'1243500','addressCountry':'IL'},'sameAs':[facts['bookingUrl']]}
- rating={**facts['rating'],'sourceUrl':booking,'locale':'he-IL' if lang=='he' else 'en-GB','labels':{k:t[k] for k in ['ratingBased','ratingChecked','ratingOut','ratingCurrent']}}
+ rating={**{key:facts['rating'][key] for key in ('score','reviewCount','checkedAt','maxAgeDays')},'sourceUrl':booking,'locale':'he-IL' if lang=='he' else 'en-GB','labels':{k:t[k] for k in ['ratingBased','ratingChecked','ratingOut','ratingCurrent']}}
  s=f'''<!doctype html>
 <html lang="{lang}" dir="{t['dir']}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,4 +59,4 @@ def build(lang):
  target=ROOT/('index.html' if lang=='he' else 'en/index.html');target.parent.mkdir(exist_ok=True);target.write_text(s)
 for language in ('he','en'):build(language)
 (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.albayt1.com/</loc></url><url><loc>https://www.albayt1.com/en/</loc></url></urlset>\n')
-(ROOT/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /review/\nDisallow: /docs/\nSitemap: https://www.albayt1.com/sitemap.xml\n')
+(ROOT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://www.albayt1.com/sitemap.xml\n')
