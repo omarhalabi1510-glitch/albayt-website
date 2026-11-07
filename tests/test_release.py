@@ -58,7 +58,13 @@ class ReleaseTests(unittest.TestCase):
             old=subprocess.check_output(['git','show',f'f70b9f9:{name}'],cwd=ROOT,text=True)
             # The only HTML difference is removing an unused rating metadata key.
             old=old.replace(', "source": "Booking.com"','')
-            self.assertEqual(old,(self.output/name).read_text())
+            # The explainer film is the only section added after that baseline.
+            new=(self.output/name).read_text()
+            film=re.search(r'<section class="film" id="film".*?</section>\n',new)
+            self.assertIsNotNone(film)
+            self.assertIn('<video controls playsinline preload="metadata" poster="/images/zimmer-he-explainer-poster.jpg"',film.group(0))
+            self.assertNotIn('autoplay',film.group(0))
+            self.assertEqual(old,new.replace(film.group(0),''))
 
     def test_rebuild_preserves_but_does_not_republish_old_output(self):
         with tempfile.TemporaryDirectory() as temporary:

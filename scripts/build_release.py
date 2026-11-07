@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE_FILES = (
     'index.html', 'en/index.html', '404.html', 'css/style.css',
     'js/main.js', 'js/rating.js', 'images/logo.png', 'robots.txt', 'sitemap.xml',
+    'images/zimmer-he-explainer-poster.jpg', 'videos/zimmer-he-explainer.mp4',
 )
 
 def release_files(root=ROOT):

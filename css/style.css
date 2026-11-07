@@ -261,3 +261,12 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin-bottom:12px}d
 @media(max-width:600px){html{scroll-padding-top:85px}.topbar{padding:10px 14px;gap:10px}.brand{font-size:19px;gap:7px}.brand img{width:34px}.header-contact{display:none}.lang{padding:3px 7px}.menu-toggle{font-size:14px;padding:6px 9px}.hero{min-height:780px;min-height:100svh}.hero-inner{padding-top:132px;padding-bottom:36px}.hero h1{font-size:42px}.hero-sub{font-size:19px}.hero-ctas{gap:10px;margin-bottom:22px}.hero .btn{font-size:15px}.trust{font-size:13px}.score{width:48px;height:48px;font-size:21px}.intro{padding:54px 0}.intro-grid{gap:26px}.intro-facts{gap:10px}.intro-facts li{padding:18px 12px;font-size:14px}.room-grid,.policy-grid{grid-template-columns:1fr}.room-body{padding:24px}.room h3{font-size:25px}.room-ctas .btn{width:100%;justify-content:center}.room-ctas{gap:16px}.g-grid{gap:20px 10px}.g-grid figcaption{font-size:13px}.split figure img{height:300px}.split-body{padding:40px 22px}.policy-grid{gap:28px}.plan{padding:56px 0}.rev-badge{padding:18px}.contact-grid{gap:32px}.c-list{font-size:16px}.lightbox{padding:14px}.lb-nav{gap:7px;font-size:13px}.lb-nav button{padding:8px 10px}.hero-kicker{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media print{.topbar,.hero-ctas,.menu-toggle,.lightbox{display:none}.hero{min-height:300px}.hero-inner{padding:30px}.hero-img{opacity:.3}.hero-inner{color:#26221d}.hero-veil{display:none}.rooms,.gallery,.plan,.contact{padding:20px 0}}
+
+/* November 2026: short explainer film after the welcome. */
+.film{padding:84px 0 76px;border-bottom:1px solid #e7ded3}
+.film-inner{text-align:center}
+.film .section-sub{margin:0 auto 34px}
+.film-frame{width:100%;max-width:clamp(250px,calc((100svh - 150px) * 9 / 16),390px);margin:0 auto;padding:10px;background:var(--paper);border:1px solid #e7ded3;border-radius:18px}
+.film-frame video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:#211713}
+@media(max-width:600px){.film{padding:56px 0 52px}.film .section-sub{margin-bottom:26px}.film-frame{padding:8px;border-radius:16px}}
+@media print{.film{display:none}}
