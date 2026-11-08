@@ -1,0 +1,24 @@
+name: Refresh Booking rating
+on:
+  schedule:
+    - cron: '20 4 * * 1,4'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read the public Booking rating
+        run: python3 scripts/refresh_rating.py
+      - name: Rebuild the guest pages
+        run: python3 scripts/build.py
+      - name: Keep the snapshot when it changed
+        run: |
+          git diff --quiet -- content/property.json index.html en/index.html && exit 0
+          git config user.name "albayt-rating"
+          git config user.email "actions@github.com"
+          git add content/property.json index.html en/index.html
+          git commit -m "Update the Booking guest rating snapshot"
+          git push

@@ -10,6 +10,15 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+
+def mask_dated_additions(html):
+    html=re.sub(r'<section class="film" id="film".*?</section>\n','',html,flags=re.S)
+    html=re.sub(r'<section class="availability" id="availability".*?</section>\n','',html,flags=re.S)
+    html=re.sub(r'<script id="calendar-data" type="application/json">.*?</script>','',html)
+    html=html.replace('<script type="module" src="/js/calendar.js"></script>','')
+    html=re.sub(r'"score": [\d.]+, "reviewCount": \d+, "checkedAt": "[^"]+", "maxAgeDays": \d+',
+                '"score": 0, "reviewCount": 0, "checkedAt": "", "maxAgeDays": 0',html)
+    return html
 spec = importlib.util.spec_from_file_location('build_release', ROOT/'scripts/build_release.py')
 release = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(release)
@@ -43,28 +52,49 @@ class ReleaseTests(unittest.TestCase):
                 if target.is_dir():target=target/'index.html'
                 self.assertTrue(target.is_file(),ref)
         self.assertTrue((self.output/'js/rating.js').is_file())
+        self.assertTrue((self.output/'js/calendar.js').is_file())
+        self.assertTrue((self.output/'js/availability.js').is_file())
         self.assertNotRegex((self.output/'js/main.js').read_text(),r'fetch\s*\(')
+        self.assertNotRegex((self.output/'js/calendar.js').read_text(),r'ical\.booking\.com/v1/export\?t=[0-9a-f-]{36}')
 
     def test_only_consumed_rating_fields_are_inlined(self):
+        facts=json.loads((ROOT/'content/property.json').read_text())['rating']
         for name in ['index.html','en/index.html']:
             text=(self.output/name).read_text()
             data=json.loads(re.search(r'<script id="rating-data" type="application/json">(.*?)</script>',text).group(1))
             self.assertEqual(set(data),{'score','reviewCount','checkedAt','maxAgeDays','sourceUrl','locale','labels'})
             self.assertEqual(set(data['labels']),{'ratingBased','ratingChecked','ratingOut','ratingCurrent'})
-            self.assertEqual((data['score'],data['reviewCount']),(8.9,104))
+            self.assertEqual((data['score'],data['reviewCount'],data['maxAgeDays']),(facts['score'],facts['reviewCount'],facts['maxAgeDays']))
+            self.assertEqual(facts['score'],9.0)
+            self.assertEqual(facts['maxAgeDays'],14)
+            self.assertNotIn('8.9',text)
+
+    def test_calendar_follows_the_film_without_export_tokens(self):
+        for name in ['index.html','en/index.html']:
+            text=(self.output/name).read_text()
+            film=text.index('id="film"')
+            calendar=text.index('id="availability"')
+            rooms=text.index('id="rooms"')
+            self.assertLess(film,calendar)
+            self.assertLess(calendar,rooms)
+            section=re.search(r'<section class="availability" id="availability".*?</section>',text).group(0)
+            for forbidden in ['ical.booking.com','export?t=','Pool View','pool view','מפואר','luxury','₪']:
+                self.assertNotIn(forbidden,section)
+                self.assertNotIn(forbidden,text)
+            self.assertIn('calendarMonthFull',text)
+            self.assertNotIn('autoplay',text)
 
     def test_page_behavior_and_content_match_published_baseline(self):
         for name in ['index.html','en/index.html']:
             old=subprocess.check_output(['git','show',f'f70b9f9:{name}'],cwd=ROOT,text=True)
             # The only HTML difference is removing an unused rating metadata key.
             old=old.replace(', "source": "Booking.com"','')
-            # The explainer film is the only section added after that baseline.
             new=(self.output/name).read_text()
             film=re.search(r'<section class="film" id="film".*?</section>\n',new)
             self.assertIsNotNone(film)
             self.assertIn('<video controls playsinline preload="metadata" poster="/images/zimmer-he-explainer-poster.jpg"',film.group(0))
             self.assertNotIn('autoplay',film.group(0))
-            self.assertEqual(old,new.replace(film.group(0),''))
+            self.assertEqual(mask_dated_additions(old),mask_dated_additions(new))
 
     def test_rebuild_preserves_but_does_not_republish_old_output(self):
         with tempfile.TemporaryDirectory() as temporary:

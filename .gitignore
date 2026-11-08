@@ -3,3 +3,5 @@ __pycache__/
 review/
 dist/
 .release-backups/
+.dev.vars
+.env
