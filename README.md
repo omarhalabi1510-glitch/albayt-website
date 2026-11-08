@@ -22,15 +22,34 @@ The photo manifest contains asset names, dimensions and integrity hashes for
 build tooling; it is not needed by visitors. To regenerate optimized images,
 run `python3 scripts/prepare_assets.py` with Pillow installed, then rebuild.
 
-The guest rating is manually verified and dated. Update score, reviewCount and
-checkedAt together after checking the source. An expired, future or invalid
-rating displays a source link. There is no automatic remote data collection.
+The guest rating is a dated Booking.com snapshot in `content/property.json`.
+Visitors see the score while it is within `maxAgeDays` (14). After that, the
+badge links to Booking instead of keeping an old number on screen. Update
+`score`, `reviewCount` and `checkedAt` together. `.github/workflows/refresh-rating.yml`
+reads the public listing twice a week and, only when it can parse one score and
+one review count, refreshes that snapshot. If Booking blocks the read, the last
+snapshot stays as it is.
+
+Availability is the Booking export calendar. A day is free when at least one of
+the four units is open; a month in which every remaining night is fully booked
+is marked sold out as a whole. The private export URLs are Cloudflare Pages
+secrets, not files in this repository:
+
+- `ICAL_329199201` — חדר זוגי / Double Room
+- `ICAL_329199202` — סוויטה לעד 5 אורחים / Suite for up to 5
+- `ICAL_329199203` — סוויטת משפחה / Family Suite
+- `ICAL_329199204` — סוויטה לעד 4 אורחים / Suite for up to 4
+
+`functions/api/availability.js` fetches those URLs and returns booked nights
+only. Pages serves it at `/api/availability`, beside the `dist` output. For a
+local preview, put the same keys in an untracked `.dev.vars` file and run
+`node scripts/dev_server.mjs`.
 
 ## Validation
 
 ```sh
 python3 -m unittest discover -s tests
-node --test tests/rating.test.mjs
+node --test tests/rating.test.mjs tests/availability.test.mjs
 node --check js/main.js
 git diff --check
 ```

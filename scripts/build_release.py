@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASE_FILES = (
     'index.html', 'en/index.html', '404.html', 'css/style.css',
-    'js/main.js', 'js/rating.js', 'images/logo.png', 'robots.txt', 'sitemap.xml',
+    'js/main.js', 'js/rating.js', 'js/calendar.js', 'js/availability.js', 'images/logo.png', 'robots.txt', 'sitemap.xml',
     'images/zimmer-he-explainer-poster.jpg', 'videos/zimmer-he-explainer.mp4',
 )
 
