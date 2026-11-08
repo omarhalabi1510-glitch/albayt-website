@@ -89,6 +89,14 @@ class ReleaseTests(unittest.TestCase):
                 for phrase in ['The whole property is free','Part of the property is free','The whole property is booked']:
                     self.assertIn(phrase,text)
             self.assertNotIn('autoplay',text)
+            data=json.loads(re.search(r'<script id="calendar-data" type="application/json">(.*?)</script>',text).group(1))
+            photos={unit['id']:unit['photos'] for unit in data['units']}
+            self.assertEqual(list(photos), ['329199201','329199202','329199203','329199204'])
+            for paths in photos.values():
+                self.assertGreaterEqual(len(paths), 1)
+                for path in paths:
+                    self.assertTrue((self.output/path.lstrip('/')).is_file(), path)
+                    self.assertNotRegex(path, r'pool|jacuzzi|luxury|tv|wifi', re.I)
 
     def test_page_behavior_and_content_match_published_baseline(self):
         for name in ['index.html','en/index.html']:

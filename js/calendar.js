@@ -99,11 +99,14 @@ async function renderCalendar() {
       const open = !unit.bookedNights.includes(iso);
       if (open) free.push(unit.name);
       const item = el('li');
-      const name = el('span', 'name');
+      const name = el('button', 'unit-name');
+      name.type = 'button';
       name.textContent = unit.name;
+      name.setAttribute('aria-expanded', 'false');
       const status = el('span', open ? 'free' : 'booked');
       status.textContent = open ? config.labels.calendarFree : config.labels.calendarBooked;
       item.append(name, status);
+      if (unit.photos?.length) item.append(roomPreview(unit, name));
       list.append(item);
     }
     const advice = el('p', 'calendar-note');
@@ -128,6 +131,45 @@ async function renderCalendar() {
     actions.append(whatsapp, booking);
     panel.append(heading, caption, list, advice, actions);
     return panel;
+  }
+
+  function roomPreview(unit, name) {
+    const preview = el('div', 'room-preview');
+    const photos = unit.photos;
+    let index = 0;
+    const img = el('img');
+    img.alt = unit.name;
+    img.decoding = 'async';
+    const show = () => { img.src = photos[index]; };
+    show();
+    preview.append(img);
+    if (photos.length > 1) {
+      const nav = el('div', 'room-preview-nav');
+      const prev = button('‹', config.photoPrev, event => step(event, -1));
+      const next = button('›', config.photoNext, event => step(event, 1));
+      const count = el('span');
+      const paint = () => { count.textContent = `${index + 1} / ${photos.length}`; };
+      function step(event, delta) {
+        event.stopPropagation();
+        event.preventDefault();
+        index = (index + delta + photos.length) % photos.length;
+        show();
+        paint();
+      }
+      paint();
+      nav.append(prev, count, next);
+      preview.append(nav);
+    }
+    name.addEventListener('click', event => {
+      if (!window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+      event.stopPropagation();
+      const open = !preview.classList.contains('is-open');
+      root.querySelectorAll('.room-preview.is-open').forEach(node => node.classList.remove('is-open'));
+      root.querySelectorAll('.unit-name[aria-expanded="true"]').forEach(node => node.setAttribute('aria-expanded', 'false'));
+      if (open) preview.classList.add('is-open');
+      name.setAttribute('aria-expanded', String(open));
+    });
+    return preview;
   }
 
   function legend() {
