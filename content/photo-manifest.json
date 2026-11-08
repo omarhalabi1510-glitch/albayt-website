@@ -11,7 +11,16 @@
     "winter-garden": "images/gallery-02.jpg",
     "stone-room-interior": "images/site/room1.jpg",
     "wood-room-interior": "images/site/room3.jpg",
-    "wood-bedroom": "images/site/room4.jpg"
+    "wood-bedroom": "images/site/room4.jpg",
+    "room-201-windows": "images/rooms/room-201-windows.jpg",
+    "room-202-window": "images/rooms/room-202-window.jpg",
+    "room-202-bath": "images/rooms/room-202-bath.jpg",
+    "room-203-beds": "images/rooms/room-203-beds.jpg",
+    "room-203-room": "images/rooms/room-203-room.jpg",
+    "room-204-bed": "images/rooms/room-204-bed.jpg",
+    "room-204-beds": "images/rooms/room-204-beds.jpg",
+    "room-204-nook": "images/rooms/room-204-nook.jpg",
+    "room-202-sitting": "images/rooms/room-202-sitting.jpg"
   },
   "originals": [
     {
@@ -205,6 +214,60 @@
       "sha256": "64e5efa08826a1ddbbc2653861ddca95f8951d9e513a6154b8c25ed147dfb780",
       "width": 1024,
       "height": 768
+    },
+    {
+      "original": "images/rooms/room-201-windows.jpg",
+      "sha256": "cad653f769d49af6e621b61ede1e750123932df66ef72328999357fb07950274",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "original": "images/rooms/room-202-window.jpg",
+      "sha256": "6dac913cfaf20aaca68e6f4d316e73b5232582778cf56959a1304319813fcb5b",
+      "width": 675,
+      "height": 900
+    },
+    {
+      "original": "images/rooms/room-202-bath.jpg",
+      "sha256": "76b89d20703bc2bc36dfc010edc5f490e92770dcc383a18af025b455abfe9034",
+      "width": 506,
+      "height": 900
+    },
+    {
+      "original": "images/rooms/room-203-beds.jpg",
+      "sha256": "cd48ae7b2bb45c79546dfdf2117f3564587c08fc0ba1456a1a03a3b69a642b6d",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "original": "images/rooms/room-203-room.jpg",
+      "sha256": "ef58b5196a7f1453424ef136869ffc894ea117a9d039760b0a314efbdfe5b781",
+      "width": 675,
+      "height": 900
+    },
+    {
+      "original": "images/rooms/room-204-bed.jpg",
+      "sha256": "d78665e4d16e0f6df26a4c2f65481c211186fb72e9759fdf590ebcc9eb4ebe76",
+      "width": 675,
+      "height": 900
+    },
+    {
+      "original": "images/rooms/room-204-beds.jpg",
+      "sha256": "07a52e0933bd85534f1821fc8c2a6eacffbe103251b10897a6d4b9aed2dd5ad7",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "original": "images/rooms/room-204-nook.jpg",
+      "sha256": "fe3e05e28c9ebffa0e22bfa2f20dce2103d8924dae144ae23ca22e18ebf5b24e",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "original": "images/rooms/room-202-sitting.jpg",
+      "sha256": "341804e9dbdefaefb210d49326e931b7a20b79acef8af355071d4571ed65d6dc",
+      "width": 675,
+      "height": 900
     }
   ]
 }

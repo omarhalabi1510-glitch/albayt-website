@@ -11,7 +11,13 @@ selected={
  'lake-terrace':'images/site/g01.jpg','lake-daylight':'images/site/g02.jpg',
  'stone-exterior':'images/gallery-07.jpg','winter-garden':'images/gallery-02.jpg',
  'stone-room-interior':'images/site/room1.jpg','wood-room-interior':'images/site/room3.jpg',
- 'wood-bedroom':'images/site/room4.jpg'}
+ 'wood-bedroom':'images/site/room4.jpg',
+ 'room-201-windows':'images/rooms/room-201-windows.jpg',
+ 'room-202-sitting':'images/rooms/room-202-sitting.jpg',
+ 'room-202-window':'images/rooms/room-202-window.jpg','room-202-bath':'images/rooms/room-202-bath.jpg',
+ 'room-203-beds':'images/rooms/room-203-beds.jpg','room-203-room':'images/rooms/room-203-room.jpg',
+ 'room-204-bed':'images/rooms/room-204-bed.jpg','room-204-beds':'images/rooms/room-204-beds.jpg',
+ 'room-204-nook':'images/rooms/room-204-nook.jpg'}
 manifest=[]
 for p in sorted((ROOT/'images').rglob('*')):
  if p.suffix.lower() not in ('.jpg','.jpeg','.png') or 'optimized' in p.parts: continue

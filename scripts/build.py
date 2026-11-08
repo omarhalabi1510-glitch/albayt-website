@@ -31,7 +31,13 @@ def build(lang):
  schema={'@context':'https://schema.org','@type':'LodgingBusiness','name':facts['propertyName'],'url':facts['website'],'image':facts['website']+'/images/optimized/lake-garden-1280.webp','telephone':facts['phone'],'address':{'@type':'PostalAddress','addressLocality':'Mas’ade','postalCode':'1243500','addressCountry':'IL'},'sameAs':[facts['bookingUrl']]}
  rating={**{key:facts['rating'][key] for key in ('score','reviewCount','checkedAt','maxAgeDays')},'sourceUrl':booking,'locale':'he-IL' if lang=='he' else 'en-GB','labels':{k:t[k] for k in ['ratingBased','ratingChecked','ratingOut','ratingCurrent']}}
  calendar_keys=['calendarTitle','calendarLead','calendarSold','calendarFree','calendarBooked','calendarLegendFree','calendarLegendPartial','calendarLegendBooked','calendarMonthFull','calendarLag','calendarChecked','calendarPrev','calendarNext','calendarLoading','calendarUnavailable','calendarNoBook','calendarAsk','calendarAskSold','calendarWhatsapp','calendarBooking','calendarWeekdays','calendarToday','calendarUnits']
- calendar={'locale':'he-IL' if lang=='he' else 'en-GB','timeZone':'Asia/Jerusalem','bookingUrl':booking,'whatsapp':facts['whatsapp'],'units':[{'id':room['id'],'name':t['roomNames'][n]} for n,room in enumerate(facts['rooms'])],'labels':{k:t[k] for k in calendar_keys}}
+ room_photos={
+  '329199201':['wood-bedroom','wood-room-interior','room-201-windows'],
+  '329199202':['room-202-sitting','room-202-window','room-202-bath'],
+  '329199203':['room-203-beds','room-203-room'],
+  '329199204':['stone-room-interior','room-204-beds','room-204-bed','room-204-nook'],
+ }
+ calendar={'locale':'he-IL' if lang=='he' else 'en-GB','timeZone':'Asia/Jerusalem','bookingUrl':booking,'whatsapp':facts['whatsapp'],'photoPrev':t['previous'],'photoNext':t['next'],'units':[{'id':room['id'],'name':t['roomNames'][n],'photos':[f'/images/optimized/{key}-960.webp' for key in room_photos[room['id']]]} for n,room in enumerate(facts['rooms'])],'labels':{k:t[k] for k in calendar_keys}}
  calendar_block=f'''<section class="availability" id="availability" aria-labelledby="availability-title"><div class="wrap"><h2 class="section-h" id="availability-title">{h('calendarTitle')}</h2><p class="section-sub">{h('calendarLead')}</p><div id="stay-calendar"><div class="calendar-sheet"><p class="calendar-note">{h('calendarLag')}</p><div class="calendar-actions"><a class="btn btn-wa" href="{esc(wa(t['message']))}" {external}>{h('calendarWhatsapp')}</a><a class="text-link" href="{booking}" {external}>{h('calendarBooking')}</a></div></div></div></div></section>'''
  s=f'''<!doctype html>
 <html lang="{lang}" dir="{t['dir']}"><head>
