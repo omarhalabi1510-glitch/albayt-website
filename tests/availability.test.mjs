@@ -33,8 +33,10 @@ test('a month is full only when every remaining night has no free unit', () => {
   assert.equal(isMonthFull(2028, 1, '2026-11-08', '2028-05-08', units), true);
   const oneFree = units.map((unit, index) => index === 0 ? {...unit, bookedNights: january.filter(iso => iso !== '2028-01-15')} : unit);
   assert.equal(isMonthFull(2028, 1, '2026-11-08', '2028-05-08', oneFree), false);
-  assert.equal(dayState('2028-01-15', '2026-11-08', '2028-05-08', oneFree), 'open');
+  assert.equal(dayState('2028-01-15', '2026-11-08', '2028-05-08', oneFree), 'partial');
   assert.equal(dayState('2028-01-16', '2026-11-08', '2028-05-08', oneFree), 'sold');
+  const clear = ids.map(id => ({id, bookedNights: []}));
+  assert.equal(dayState('2026-11-12', '2026-11-08', '2028-05-08', clear), 'free');
 });
 
 test('past nights and an incomplete horizon do not make a month look fully booked', () => {

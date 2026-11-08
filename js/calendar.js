@@ -43,13 +43,12 @@ async function renderCalendar() {
     const title = el('h3');
     title.textContent = monthName(view.year, view.month, config.locale);
     nav.append(prev, title, next);
-    sheet.append(nav);
+    sheet.append(nav, legend());
     if (full) {
       const banner = el('p', 'month-full');
       banner.textContent = config.labels.calendarMonthFull;
       sheet.append(banner);
     }
-    sheet.append(legend());
     const grid = el('div', 'calendar-grid');
     grid.setAttribute('role', 'grid');
     grid.addEventListener('keydown', event => move(event, grid));
@@ -74,12 +73,8 @@ async function renderCalendar() {
     const number = el('span', 'day-num');
     number.textContent = String(Number(iso.slice(-2)));
     control.append(number);
-    if (state === 'sold') {
-      const word = el('span', 'day-state');
-      word.textContent = config.labels.calendarSold;
-      control.append(word);
-    }
-    const described = [iso === data.today ? config.labels.calendarToday : '', longDate(iso), state === 'sold' ? config.labels.calendarSold : state === 'open' ? config.labels.calendarLegendOpen : ''].filter(Boolean).join(', ');
+    const meaning = {free: config.labels.calendarLegendFree, partial: config.labels.calendarLegendPartial, sold: config.labels.calendarLegendBooked}[state] || '';
+    const described = [iso === data.today ? config.labels.calendarToday : '', longDate(iso), meaning].filter(Boolean).join(', ');
     control.setAttribute('aria-label', described);
     control.setAttribute('aria-pressed', String(iso === view.selected));
     if (state === 'past' || state === 'beyond') control.disabled = true;
@@ -136,9 +131,13 @@ async function renderCalendar() {
   }
 
   function legend() {
-    const row = el('div', 'calendar-legend');
-    row.append(sample('swatch-open', config.labels.calendarLegendOpen), sample('swatch-sold', config.labels.calendarLegendSold));
-    return row;
+    const list = el('ul', 'calendar-legend');
+    list.append(
+      sample('swatch-free', config.labels.calendarLegendFree),
+      sample('swatch-partial', config.labels.calendarLegendPartial),
+      sample('swatch-sold', config.labels.calendarLegendBooked),
+    );
+    return list;
   }
 
   function standingNote() {
@@ -195,7 +194,7 @@ function fallback(config) {
 }
 
 function sample(kind, text) {
-  const item = el('span');
+  const item = el('li');
   const mark = el('i', kind);
   mark.setAttribute('aria-hidden', 'true');
   item.append(mark, document.createTextNode(text));
