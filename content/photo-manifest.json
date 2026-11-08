@@ -19,7 +19,8 @@
     "room-203-room": "images/rooms/room-203-room.jpg",
     "room-204-bed": "images/rooms/room-204-bed.jpg",
     "room-204-beds": "images/rooms/room-204-beds.jpg",
-    "room-204-nook": "images/rooms/room-204-nook.jpg"
+    "room-204-nook": "images/rooms/room-204-nook.jpg",
+    "room-202-sitting": "images/rooms/room-202-sitting.jpg"
   },
   "originals": [
     {
@@ -261,6 +262,12 @@
       "sha256": "fe3e05e28c9ebffa0e22bfa2f20dce2103d8924dae144ae23ca22e18ebf5b24e",
       "width": 1280,
       "height": 720
+    },
+    {
+      "original": "images/rooms/room-202-sitting.jpg",
+      "sha256": "341804e9dbdefaefb210d49326e931b7a20b79acef8af355071d4571ed65d6dc",
+      "width": 675,
+      "height": 900
     }
   ]
 }
