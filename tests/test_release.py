@@ -82,6 +82,12 @@ class ReleaseTests(unittest.TestCase):
                 self.assertNotIn(forbidden,section)
                 self.assertNotIn(forbidden,text)
             self.assertIn('calendarMonthFull',text)
+            if name=='index.html':
+                for phrase in ['כל המתחם פנוי','חלק מהמתחם פנוי','כל המתחם תפוס']:
+                    self.assertIn(phrase,text)
+            else:
+                for phrase in ['The whole property is free','Part of the property is free','The whole property is booked']:
+                    self.assertIn(phrase,text)
             self.assertNotIn('autoplay',text)
 
     def test_page_behavior_and_content_match_published_baseline(self):

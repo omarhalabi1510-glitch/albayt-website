@@ -60,8 +60,10 @@ export function monthGrid(year, month) {
 export function dayState(iso, today, until, units) {
   if (iso < today) return 'past';
   if (iso > until) return 'beyond';
-  const sold = units.every(unit => unit.bookedNights.includes(iso));
-  return sold ? 'sold' : 'open';
+  const booked = units.filter(unit => unit.bookedNights.includes(iso)).length;
+  if (booked === 0) return 'free';
+  if (booked === units.length) return 'sold';
+  return 'partial';
 }
 
 export function isMonthFull(year, month, today, until, units) {
