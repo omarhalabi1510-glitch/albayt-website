@@ -186,7 +186,7 @@ async function renderCalendar() {
     const block = el('p', 'calendar-note calendar-standing');
     const checked = new Intl.DateTimeFormat(config.locale, {year: 'numeric', month: 'short', day: 'numeric', timeZone: 'Europe/Berlin'}).format(new Date(data.checkedAt));
     const [before, after] = config.labels.calendarChecked.split('{date}');
-    block.append(document.createTextNode(`${config.labels.calendarLag} ${before}`));
+    block.append(document.createTextNode(before));
     const time = el('time');
     time.dateTime = data.checkedAt;
     time.textContent = checked;
