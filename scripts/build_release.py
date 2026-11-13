@@ -1,44 +1,41 @@
-"""Build a static deployment from an explicit file allowlist, never the repo root."""
-import json
-import re
+"""Build the static deployment from the Concept A site in site/, never the repo root.
+
+Cloudflare Pages runs `python3 scripts/build_release.py` and publishes `dist/`.
+The Pages Function in functions/ (served at /api/availability) stays beside it.
+"""
 import shutil
-import subprocess
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_FILES = (
-    'index.html', 'en/index.html', '404.html', 'css/style.css',
-    'js/main.js', 'js/rating.js', 'js/calendar.js', 'js/availability.js', 'images/logo.png', 'robots.txt', 'sitemap.xml',
-    'images/zimmer-he-explainer-poster.jpg', 'videos/zimmer-he-explainer.mp4',
-)
+SITE = ROOT/'site'
+ALLOWED = {'.html', '.css', '.js', '.webp', '.avif', '.png', '.jpg', '.svg', '.woff2',
+           '.mp4', '.txt', '.xml', '.ico', '.webmanifest'}
 
 def release_files(root=ROOT):
-    manifest = json.loads((root/'content/photo-manifest.json').read_text())
-    files = set(BASE_FILES)
-    for key in manifest['selected']:
-        if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', key):
-            raise ValueError('Invalid image asset key')
-        files.update(f'images/optimized/{key}-{width}.webp' for width in (480, 960, 1280))
-    return sorted(files)
+    site = (root/'site').resolve()
+    files = []
+    for p in sorted(site.rglob('*')):
+        if p.is_symlink():
+            raise ValueError(f'Refusing symlinked asset: {p.relative_to(site)}')
+        if not p.is_file() or p.name.startswith('.'):
+            continue
+        if p.suffix.lower() not in ALLOWED:
+            raise ValueError(f'Unexpected file type in site/: {p.relative_to(site)}')
+        files.append(str(p.relative_to(site)))
+    for required in ('index.html', 'en/index.html', '404.html'):
+        if required not in files:
+            raise ValueError(f'Missing {required}')
+    return files
 
 def package_release(root=ROOT):
     root = root.resolve()
     files = release_files(root)
-    # Validate every source before touching an existing output. Never follow a
-    # symlink that could unexpectedly include an unrelated local file.
-    for name in files:
-        source = root/name
-        if not source.is_file() or source.resolve() != source:
-            raise ValueError(f'Missing or symlinked release asset: {name}')
     output = root/'dist'
     if output.is_symlink() or (output.exists() and not output.is_dir()):
         raise ValueError('Refusing to replace an unexpected dist path')
     if output.exists():
         backups = root/'.release-backups'
-        if backups.is_symlink():
-            raise ValueError('Refusing a symlinked backup directory')
         backups.mkdir(mode=0o700, exist_ok=True)
         stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
         output.rename(backups/stamp)
@@ -46,10 +43,9 @@ def package_release(root=ROOT):
     for name in files:
         target = output/name
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(root/name, target)
+        shutil.copyfile(root/'site'/name, target)
     return output
 
 if __name__ == '__main__':
-    subprocess.run([sys.executable, str(ROOT/'scripts/build.py')], check=True)
     output = package_release()
     print(f'Prepared {len(release_files())} public files in {output.name}/')

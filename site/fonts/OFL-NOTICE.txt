@@ -1,0 +1,6 @@
+Self-hosted fonts, all under the SIL Open Font License 1.1 (https://openfontlicense.org). Source: github.com/google/fonts.
+- Bellefair: Copyright Nick Shinn / Liron Lavi Turkenich (ofl/bellefair). Display face (400).
+- Assistant: Copyright 2010 The Assistant Project Authors (ofl/assistant). Text face (variable, 400-800).
+- Frank Ruhl Libre: Copyright 2015 The Frank Ruhl Libre Project Authors (ofl/frankruhllibre). Serif fallback only; it downloads only when a glyph is missing from Bellefair.
+The files are modified only by subsetting with fontTools: a Hebrew file, a digits/punctuation file and a Latin-letters file (Bellefair), or a Hebrew + digits/punctuation file and a Latin-letters file (Assistant, Frank Ruhl Libre). Assistant's weight axis is limited to 400-800 and Frank Ruhl Libre's to 500-900.
+Reserved Font Names are not used for the modified files' family names in a way that implies endorsement.
