@@ -269,10 +269,12 @@ h2 { font-size: clamp(2.2rem, 5.2vw, 4.6rem); line-height: 1.04; letter-spacing:
 .locate .leaflet-control-zoom a:hover { background: var(--paper-2) !important; }
 .locate .leaflet-control-attribution { background: oklch(96.8% 0.008 80 / .92) !important; color: var(--muted); font-size: .7rem; font-family: var(--sans); }
 .locate .leaflet-control-attribution a { color: inherit; }
-.map-pin { transform: translate(-50%, calc(-100% - .2rem)); display: flex; flex-direction: column; align-items: center; gap: .3rem; }
-.map-pin-mark { inline-size: 1rem; block-size: 1rem; background: var(--lake); border: 2px solid var(--paper); border-radius: 50%; box-shadow: 0 2px 10px oklch(20% 0.02 60 / .35); }
+.map-pin { position: relative; inline-size: 0; block-size: 0; }
+.map-pin-mark { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); display: block; inline-size: 1rem; block-size: 1rem; background: var(--lake); border: 2px solid var(--paper); border-radius: 50%; box-shadow: 0 2px 10px oklch(20% 0.02 60 / .35); }
 .map-pin-label, .map-lake-label { font-family: var(--serif); font-size: 1.05rem; line-height: 1.2; background: var(--paper); color: var(--ink); padding: .18em .6em .12em; border: 1px solid var(--hair); box-shadow: 0 6px 18px oklch(20% 0.02 60 / .12); white-space: nowrap; }
 .map-lake-label { transform: translate(-50%, -50%); background: oklch(96.8% 0.008 80 / .88); color: var(--lake); border-color: transparent; box-shadow: none; font-size: 1.15rem; pointer-events: none; }
+/* Label floats above the dot: bottom edge sits .3rem above the top of the 1rem mark, which is centred on the coordinates. */
+.map-pin-label { position: absolute; left: 0; bottom: calc(.5rem + .3rem); transform: translateX(-50%); }
 .locate .leaflet-top, .locate .leaflet-bottom { z-index: 2; }
 .contact { position: relative; isolation: isolate; color: white; padding: clamp(6rem, 12vw, 10rem) var(--pad); overflow: clip; background: oklch(22% 0.03 250); }
 .contact-bg { position: absolute; inset: 0; z-index: -1; inline-size: 100%; block-size: 100%; object-fit: cover; filter: brightness(.5); }
